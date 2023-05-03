@@ -77,7 +77,3 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 # Kubeadm Package pull
 sudo kubeadm config images pull
-
-# Kubeadm cluster initalize
-ip=$(ip route get 1 | awk '{print $NF;exit}')
-sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=$ip --control-plane-endpoint=$ip
